@@ -1,0 +1,3 @@
+lib/scratch.rb 7fa1dc10a0cc6cdf3cc4848bd5ba3e9d4f30bd4e
+lib/scratch/lexer.rb 8597b4a41c579d3ed41b92a8b0793374cff7777b
+lib/scratch/interpreter.rb 870d27caf9cbc8f9e091f5cb3cdc81f4e44ade9d

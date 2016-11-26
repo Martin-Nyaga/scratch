@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative 'lib/scratch.rb'
+
+SCRATCH = Scratch::Interpreter.new(interactive: true)
+
+# use object id as prompt
+prompt = '%x' % (SCRATCH.object_id << 1)
+
+puts "Scratch REPL, 2016"
+
+# start repl
+loop do
+  print "Scratch::#{prompt} > "
+  command = gets.chomp
+  SCRATCH.interprete(command)
+end 
