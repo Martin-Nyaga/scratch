@@ -19,4 +19,16 @@ describe "Scratch::Interpreter printing words" do
       assert_raises(Scratch::EmptyStackError){ @terp.interprete("PRINT") }
     end
   end
+
+  describe "PSTACK" do
+    it "prints the current stack" do
+      @terp = Scratch::Interpreter.new
+
+      out = capture_io do
+        @terp.interprete("1 10 23 PSTACK")
+      end
+
+      assert_equal "1 10 23", out[0].chomp
+    end
+  end
 end

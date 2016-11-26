@@ -4,13 +4,22 @@ module Scratch
     def load_printing_words
       printing_words = 
         {
-          "PRINT" => lambda {|s|
-            if s.stack.length > 0
-              print s.stack.pop
+          "PRINT" => lambda {|terp|
+            if terp.stack.length > 0
+              print terp.stack.pop
               puts
             else
               raise EmptyStackError
             end
+          },
+          "PSTACK" => lambda {|terp|
+            if terp.stack.length > 0
+              print terp.stack.join(" ")
+            else
+              print "Stack is empty"
+            end
+
+            puts
           }
         }
 
