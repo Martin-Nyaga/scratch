@@ -31,7 +31,7 @@ module Scratch
           "SQRT" => lambda {|terp|
             WordHelpers.require_items_on_stack(terp, 1)
             a = terp.stack.pop.to_i
-            terp.stack.push(Math.sqrt(a))
+            terp.stack.push(Math.sqrt(a).to_i)
           }
         }
 
