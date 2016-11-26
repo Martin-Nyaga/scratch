@@ -50,12 +50,20 @@ You can mix and match commands and run them as a single command. Scratch execute
 
 ```
 Scratch:89sno9> 19
-Scratch:89sno9> pstack
+Scratch:89sno9> print
 19
+Scratch:89sno9> pstack
+
+Scratch:89sno9> 19
+Scratch:89sno9> dup pstack
+19 19
+Scratch:89sno9> dropstack
+Scratch:89sno9> pstack
+
 Scratch:89sno9> dup dup drop 12 swap pstack
 19 12 19
 Scratch:89sno9> dropstack print
-== Error
+== Error: This command requres at least 1 item on the stack
 ```
 
 ### Simple Math
