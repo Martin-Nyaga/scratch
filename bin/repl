@@ -1,13 +1,16 @@
 #!/usr/bin/env ruby
 
-require_relative 'lib/scratch.rb'
+require_relative '../lib/scratch.rb'
 
 SCRATCH = Scratch::Interpreter.new(interactive: true)
 
 # use object id as prompt
 prompt = '%x' % (SCRATCH.object_id << 1)
 
-puts "Scratch REPL, 2016"
+puts
+puts "Scratch REPL"
+puts "Press CTRL+C to exit"
+puts
 
 # start repl
 loop do

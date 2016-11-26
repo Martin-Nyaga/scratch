@@ -1,3 +1,5 @@
-lib/scratch.rb 7fa1dc10a0cc6cdf3cc4848bd5ba3e9d4f30bd4e
+lib/scratch.rb b902ef791dd3a24a52d73623574d9999963c751f
 lib/scratch/lexer.rb 8597b4a41c579d3ed41b92a8b0793374cff7777b
-lib/scratch/interpreter.rb 870d27caf9cbc8f9e091f5cb3cdc81f4e44ade9d
+lib/scratch/interpreter.rb aa4be9e65fe555e829e4e378cb0c3e57a588238a
+lib/scratch/word_libs/all.rb eccda31d879460a8ebeb714ac502ae422e58cfb7
+lib/scratch/word_libs/printing_words.rb fcc2a916f1a5a8be9ac7d9747398dbb389e99afb
