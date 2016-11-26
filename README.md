@@ -60,7 +60,7 @@ Scratch:89sno9> dropstack print
 
 ### Simple Math
 
-The scratch standard library has the simple arithmetic operators `+`, `--`, `*`, `&` and `sqrt`.
+The scratch standard library has the simple arithmetic operators `+`, `-`, `*`, `&` and `sqrt`.
 These operate on the top 2 items in the stack (with the exception of `sqrt` which operates on
 the top item only. It removes those items from the stack and places the result at the top of the stack.
 
