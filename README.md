@@ -35,23 +35,11 @@ Scratch:89sno9> pstack
 ### Stack manipulation
 
 There are several commands to manipulate the stack as shown below:
-__
-|`pstack`|Print the stack.|
-|`print`|Print the top item in the stack. This drops the item from the stack.|
-|`dup`|Duplicate the top item in the stack.|
-|`swap`|Swap the top 2 items in the stack.|
-|`drop`|Remove the top item in the stack.|
-|`dropstack`|Clear the stack.|
---
 
-```
-Scratch:89sno9> 1
-Scratch:89sno9> pstack
-1
-Scratch:89sno9> 2 3 5 2 90
-Scratch:89sno9> pstack
-1 2 3 5 2 90
-```
+| Command       | Description           |
+| ------------- |-----------------------|
+| `pstack`      |Print the stack.       |
+
 
 # Testing
 
