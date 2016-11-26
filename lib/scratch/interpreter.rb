@@ -1,6 +1,6 @@
 module Scratch
   class Interpreter
-    attr_reader :dictionary, :stack, :interactive
+    attr_accessor :dictionary, :stack, :interactive
     
     # Start the interpreter with options
     # @param opts [Hash] Options for the interpreter. 
@@ -56,7 +56,7 @@ module Scratch
     end
 
     # Clear the stack
-    def dump_stack!
+    def drop_stack!
       @stack = []
     end
 
@@ -76,4 +76,7 @@ module Scratch
       super(msg)
     end
   end
+
+  # Not enough words on stack error
+  class FewArgumentsError < StandardError;  end
 end

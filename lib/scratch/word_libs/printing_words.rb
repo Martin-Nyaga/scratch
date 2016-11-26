@@ -1,24 +1,16 @@
 module Scratch
   class Interpreter
-    # add printing words to the dictionary
+    # Add printing words to the dictionary
     def load_printing_words
       printing_words = 
         {
           "PRINT" => lambda {|terp|
-            if terp.stack.length > 0
-              print terp.stack.pop
-              puts
-            else
-              raise EmptyStackError
-            end
+            WordHelpers.require_items_on_stack(terp, 1)
+            print terp.stack.pop
+            puts
           },
           "PSTACK" => lambda {|terp|
-            if terp.stack.length > 0
-              print terp.stack.join(" ")
-            else
-              print "Stack is empty"
-            end
-
+            print terp.stack.join(" ")
             puts
           }
         }

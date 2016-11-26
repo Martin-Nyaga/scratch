@@ -12,10 +12,10 @@ describe Scratch::Interpreter do
     assert_raises(Scratch::UnknownWordError){ @terp.interprete("foo") }
   end
 
-  it "dumps stack" do
+  it "drops stack" do
     @terp = Scratch::Interpreter.new
     @terp.interprete("1")
-    @terp.dump_stack!
+    @terp.drop_stack!
     assert_empty @terp.stack    
   end
 
