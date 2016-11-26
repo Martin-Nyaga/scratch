@@ -32,6 +32,7 @@ Scratch:89sno9> 2 3 5 2 90
 Scratch:89sno9> pstack
 1 2 3 5 2 90
 ```
+
 ### Stack manipulation
 
 There are several commands to manipulate the stack as shown below:
@@ -44,6 +45,37 @@ There are several commands to manipulate the stack as shown below:
 | `swap` | Swap the top 2 items in the stack. |
 | `drop` | Remove the top item in the stack. |
 | `dropstack` | Clear the stack. |
+
+You can mix and match commands and run them as a single command. Scratch executes one word at a time.
+
+```
+Scratch:89sno9> 19
+Scratch:89sno9> pstack
+19
+Scratch:89sno9> dup dup drop 12 swap pstack
+19 12 19
+Scratch:89sno9> dropstack print
+== Error
+```
+
+### Simple Math
+
+The scratch standard library has the simple arithmetic operators `+`, `--`, `*`, `&` and `sqrt`.
+These operate on the top 2 items in the stack (with the exception of `sqrt` which operates on
+the top item only. It removes those items from the stack and places the result at the top of the stack.
+
+```
+Scratch:89sno9> 2 3 + print
+5
+Scratch:89sno9> pstack
+
+Scratch:89sno9> 2 3 *
+Scratch:89sno9> pstack
+6
+Scratch:89sno9> 20 5 / 3 + print
+7
+(Twenty Divided by five, then take the quotient, plus three)
+```
 
 # Testing
 
