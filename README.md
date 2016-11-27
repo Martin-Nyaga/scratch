@@ -7,7 +7,10 @@ It is the ruby implementation of the language in [this tutorial](http://scratch-
 
 ### Hello World in Scratch
 ```
-Scratch:89sno9> " Hello World! " print
+Scratch REPL
+Press CTRL+C to exit
+
+Scratch::ba0900> " Hello World! " print
 Hello World!
 ```
 
