@@ -12,12 +12,18 @@ It is the ruby implementation of the language in [this tutorial](http://scratch-
 You can run the scratch REPL by running `bin/repl` in the folder where
 you've cloned the repo. For windows, you might want to do `ruby bin/repl`.
 
+The REPL aslo has a debug mode, which you can use by running:
+```
+DEBUG=true bin/repl
+```
+
 ## Language Features
 
 Scratch is a stack based language. The language uses a stack to store data
 and runs operations on data from the stack.
 
 At any moment you can print the stack using `pstack`.
+All commands are case insensitive.
 
 ### Adding items onto the stack
 
@@ -82,9 +88,59 @@ Scratch:89sno9> pstack
 Scratch:89sno9> 2 3 *
 Scratch:89sno9> pstack
 6
+# Twenty Divided by five, then take the quotient, plus three #
 Scratch:89sno9> 20 5 / 3 + print
 7
-(Twenty Divided by five, then take the quotient, plus three)
+```
+
+### Variables
+
+You declare variables in scratch using the `var` keyword. Variables must be declared before they are used.
+
+```
+Scratch:89sno9> var a
+```
+
+You can then assign a value to the variable using the `assign` keyword which expects the stack to contain
+the value, followed by the variable name.
+
+```
+# Assigns the value 10 to a #
+Scratch:89sno9> 10 a assign
+```
+
+Finally, you can fetch and use variable values by using the `fetch` keyword, which will push the variable's
+value on to the stack.
+
+```
+# Pushes the value assigned to a on the stack #
+Scratch:89sno9> a fetch
+```
+
+A more complex example of using variables to do some math:
+
+```
+# declare a variable length, width and hypot #
+> var length
+> var width
+> var hypot
+
+# assign length and width
+> 3 length assign
+> 4 width assign
+
+# fetch length and width to do math. 
+  This will push 3 and 4 on the stack. #
+> length fetch width fetch
+
+# calculate hypotenuse using algorithm.
+  This should calculate 5, push it on the
+  stack and then finally assign it to hypot,
+  and clear the stack. #
+> dup * swap dup * + sqrt hypot assign
+
+# fetch and print the hypotenuse #
+> hypot fetch print
 ```
 
 # Testing
