@@ -12,6 +12,11 @@ It is the ruby implementation of the language in [this tutorial](http://scratch-
 You can run the scratch REPL by running `bin/repl` in the folder where
 you've cloned the repo. For windows, you might want to do `ruby bin/repl`.
 
+The REPL aslo has a debug mode, which you can use by running:
+```
+DEBUG=true bin/repl
+```
+
 ## Language Features
 
 Scratch is a stack based language. The language uses a stack to store data
