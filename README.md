@@ -30,7 +30,7 @@ Hello, World!
 
 ## Interactive Mode
 
-You can run the scratch REPL by running `bin/repl`.
+You can run the interactive scratch REPL by running `bin/repl`.
 For windows, you might want to do `ruby bin/repl`.
 
 The REPL aslo has a debug mode, which you can use by running:
