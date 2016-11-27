@@ -1,7 +1,7 @@
 # Scratch
 Scratch is a simple stack-based programming language implemented in ruby.
 
-It is the ruby implementation of the language in [this tutorial](http://scratch-lang.notimetoplay.org/]), originally in javascript.
+It is the ruby implementation of the language in [this tutorial](http://scratch-lang.notimetoplay.org/), originally in javascript.
 
 [![Build Status](https://travis-ci.org/Martin-Nyaga/scratch.svg?branch=master)](https://travis-ci.org/Martin-Nyaga/scratch)
 
@@ -60,7 +60,7 @@ Scratch:89sno9> dup pstack
 Scratch:89sno9> dropstack
 Scratch:89sno9> pstack
 
-Scratch:89sno9> dup dup drop 12 swap pstack
+Scratch:89sno9> 19 dup dup drop 12 swap pstack
 19 12 19
 Scratch:89sno9> dropstack print
 == Error: This command requres at least 1 item on the stack
@@ -70,7 +70,9 @@ Scratch:89sno9> dropstack print
 
 The scratch standard library has the simple arithmetic operators `+`, `-`, `*`, `&` and `sqrt`.
 These operate on the top 2 items in the stack (with the exception of `sqrt` which operates on
-the top item only. It removes those items from the stack and places the result at the top of the stack.
+the top item only).
+
+Each of these commmands removes those items from the stack and places the result at the top of the stack.
 
 ```
 Scratch:89sno9> 2 3 + print
