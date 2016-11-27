@@ -150,18 +150,18 @@ A more complex example of using variables to do some math:
 > var width
 > var hypot
 
-# assign length and width
+# assign length and width #
 > 3 length assign
 > 4 width assign
 
-# fetch length and width to do math. 
-  This will push 3 and 4 on the stack. #
+# fetch length and width to do math. #
+# This will push 3 and 4 on the stack. #
 > length fetch width fetch
 
-# calculate hypotenuse using algorithm.
-  This should calculate 5, push it on the
-  stack and then finally assign it to hypot,
-  and clear the stack. #
+# calculate hypotenuse using algorithm. #
+# This should calculate 5, push it on the #
+# stack and then finally assign it to hypot, #
+# and clear the stack. #
 > dup * swap dup * + sqrt hypot assign
 
 # fetch and print the hypotenuse #
