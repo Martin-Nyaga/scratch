@@ -5,6 +5,12 @@ It is the ruby implementation of the language in [this tutorial](http://scratch-
 
 [![Build Status](https://travis-ci.org/Martin-Nyaga/scratch.svg?branch=master)](https://travis-ci.org/Martin-Nyaga/scratch)
 
+### Hello World in Scratch
+```
+Scratch:89sno9> " Hello World! " print
+Hello World!
+```
+
 # Usage
 
 ## Interactive Mode
@@ -18,12 +24,6 @@ DEBUG=true bin/repl
 ```
 
 ## Language Features
-
-### Hello World in Scratch
-```
-Scratch:89sno9> " Hello World! " print
-Hello World!
-```
 
 Scratch is a stack based language. The language uses a stack to store data
 and runs operations on data from the stack.
