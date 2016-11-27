@@ -23,6 +23,7 @@ Scratch is a stack based language. The language uses a stack to store data
 and runs operations on data from the stack.
 
 At any moment you can print the stack using `pstack`.
+All commands are case insensitive.
 
 ### Adding items onto the stack
 
