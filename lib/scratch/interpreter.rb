@@ -1,6 +1,6 @@
 module Scratch
   class Interpreter
-    attr_accessor :dictionary, :stack, :interactive
+    attr_accessor :dictionary, :stack, :interactive, :lexer
     
     # Start the interpreter with options
     # @param opts [Hash] Options for the interpreter. 
@@ -9,6 +9,7 @@ module Scratch
       @dictionary = {}
       @stack = []
       @interactive = opts[:interactive]
+      @debug = opts[:debug]
 
       load_all_words
     end
@@ -21,13 +22,18 @@ module Scratch
       end
     end
 
+    def build_lexer(text)
+      @lexer = Scratch::Lexer.new(text)
+    end
+
     # Iterprete some text
     # @param text [String] The text to be interpreted
-    def interprete text, lexer_class = Scratch::Lexer
-      lexer = lexer_class.new(text)
+    def interprete text
+      # initialize lexer
+      build_lexer(text)
       
       # loop through words given by lexer
-      while word = lexer.next_word do
+      while word = @lexer.next_word do
         word = word.upcase
 
         # if word is present in dictionary, call the function
@@ -42,6 +48,11 @@ module Scratch
         else
           raise UnknownWordError, "Unknown word: #{word}"
         end
+      end
+
+      if @debug
+        puts @stack
+        puts @dictionary
       end
 
     # Don't raise errors in interactive mode.
@@ -79,4 +90,8 @@ module Scratch
 
   # Not enough words on stack error
   class FewArgumentsError < StandardError;  end
+
+  # Syntax error
+  class SyntaxError < StandardError; end
+
 end

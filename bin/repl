@@ -2,7 +2,7 @@
 
 require_relative '../lib/scratch.rb'
 
-SCRATCH = Scratch::Interpreter.new(interactive: true)
+SCRATCH = Scratch::Interpreter.new(interactive: true, debug: true)
 
 # use object id as prompt
 prompt = '%x' % (SCRATCH.object_id << 1)
