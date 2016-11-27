@@ -1,3 +1,6 @@
+# For pretty printing
+require 'pp'
+
 module Scratch
   class Interpreter
     attr_accessor :dictionary, :stack, :interactive, :lexer
@@ -51,8 +54,13 @@ module Scratch
       end
 
       if @debug
-        puts @stack
-        puts @dictionary
+        puts 
+        puts "==== DEBUG INFORMATION ===="
+        puts "Stack:"
+        print @stack.join(" ")
+        puts
+        puts "Dict:"
+        pp @dictionary
       end
 
     # Don't raise errors in interactive mode.
