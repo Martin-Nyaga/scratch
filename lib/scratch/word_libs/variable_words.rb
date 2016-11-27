@@ -5,11 +5,7 @@ module Scratch
       variable_words = 
         {
           "VAR" => lambda {|terp|
-            var_name = terp.lexer.next_word
-            if !var_name
-              raise SyntaxError, "Unexpected end of input."
-            end
-            
+            var_name = WordHelpers.get_next_word(terp)
             terp.define(var_name, make_variable(terp))
           },
           "ASSIGN" => lambda {|terp|

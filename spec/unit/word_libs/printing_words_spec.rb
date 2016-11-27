@@ -28,7 +28,7 @@ describe "Scratch::Interpreter printing words" do
         @terp.interprete("1 10 23 PSTACK")
       end
 
-      assert_equal "1 10 23", out[0].chomp
+      assert_equal "1 ; 10 ; 23", out[0].chomp
     end
   end
 end

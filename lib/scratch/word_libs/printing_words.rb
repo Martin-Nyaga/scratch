@@ -10,7 +10,12 @@ module Scratch
             puts
           },
           "PSTACK" => lambda {|terp|
-            print terp.stack.join(" ")
+            # make delimiter blue if interactive
+            if @interactive 
+              print terp.stack.join(Scratch::STACK_DELIMITER.blue)
+            else
+              print terp.stack.join(Scratch::STACK_DELIMITER)
+            end
             puts
           }
         }

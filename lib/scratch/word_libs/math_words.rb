@@ -1,6 +1,6 @@
 module Scratch
   class Interpreter
-    # Add printing words to the dictionary
+    # Add math words to the dictionary
     def load_math_words
       math_words = 
         {

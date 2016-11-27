@@ -11,5 +11,15 @@ module Scratch
         end
       end
     end
+
+    # Expect more words on the input
+    def self.get_next_word terp
+      next_word = terp.lexer.next_word
+      if !next_word
+        raise SyntaxError, "Unexpected end of input."
+      else
+        next_word
+      end
+    end
   end
 end

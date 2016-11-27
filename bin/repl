@@ -9,13 +9,13 @@ SCRATCH = Scratch::Interpreter.new(interactive: true, debug: debug)
 prompt = '%x' % (SCRATCH.object_id << 1)
 
 puts "Scratch REPL"
-puts "DEBUG MODE ON" if debug
+puts "DEBUG MODE ON".blue.bold if debug
 puts "Press CTRL+C to exit"
 puts
 
 # start repl
 loop do
-  print "Scratch::#{prompt} > "
+  print "Scratch::#{prompt} > ".bold
   command = gets.chomp
   SCRATCH.interprete(command)
 end 

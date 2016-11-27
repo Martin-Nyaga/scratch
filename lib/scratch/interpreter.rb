@@ -1,6 +1,3 @@
-# For pretty printing
-require 'pp'
-
 module Scratch
   class Interpreter
     attr_accessor :dictionary, :stack, :interactive, :lexer
@@ -53,25 +50,28 @@ module Scratch
         end
       end
 
-      if @debug
-        puts 
-        puts "==== DEBUG INFORMATION ===="
-        puts "Stack:"
-        print @stack.join(" ")
-        puts
-        puts "Dict:"
-        pp @dictionary
-      end
+      print_debug_info if @interactive && @debug
 
     # Don't raise errors in interactive mode.
     rescue => e
       if @interactive
-        puts "== An error occurred:"
-        puts "==== #{e.class}:"
-        puts "==== #{e.message}"
+        puts "  An error occurred: #{e.class}".red.bold
+        puts "     #{e.message}"
+        puts "     Stack: #{@stack.join(Scratch::STACK_DELIMITER.blue)}"
       else
         raise e, e.message
       end
+    end
+
+    # Print debug information in debug mode
+    def print_debug_info
+      puts 
+      puts "==== DEBUG INFORMATION ====".cyan.bold
+      puts "Stack:".cyan.bold
+      print @stack.join(Scratch::STACK_DELIMITER.blue)
+      puts
+      puts "Dict:".cyan.bold
+      pp @dictionary
     end
 
     # Clear the stack
@@ -101,5 +101,4 @@ module Scratch
 
   # Syntax error
   class SyntaxError < StandardError; end
-
 end

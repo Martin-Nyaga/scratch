@@ -1,11 +1,10 @@
 require_relative './_word_helpers.rb'
 
-# core
+# libs
 require_relative './printing_words.rb'
 require_relative './stack_manipulation_words.rb'
 require_relative './variable_words.rb'
-
-# libs
+require_relative './string_words.rb'
 require_relative './math_words.rb'
 
 module Scratch
@@ -16,6 +15,7 @@ module Scratch
       load_variable_words
 
       load_math_words
+      load_string_words
     end
   end
 end
