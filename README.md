@@ -16,6 +16,8 @@ Hello World!
 
 # Usage
 
+Clone this repo.
+
 ## Scripting
 The scratch interpeter is located at `bin/scratch`.
 You can run scratch files by running `path/to/scratch file.scratch`.
@@ -28,8 +30,8 @@ Hello, World!
 
 ## Interactive Mode
 
-You can run the scratch REPL by running `bin/repl` in the folder where
-you've cloned the repo. For windows, you might want to do `ruby bin/repl`.
+You can run the scratch REPL by running `bin/repl`.
+For windows, you might want to do `ruby bin/repl`.
 
 The REPL aslo has a debug mode, which you can use by running:
 ```
