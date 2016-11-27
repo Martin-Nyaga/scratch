@@ -78,6 +78,11 @@ module Scratch
     def drop_stack!
       @stack = []
     end
+    
+    # Define a new dictionary word with some code
+    def define word, func
+      @dictionary[word.upcase] = func
+    end
 
     private
       # check if a number is a string

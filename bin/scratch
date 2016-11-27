@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/scratch.rb'
+SCRATCH = Scratch::Interpreter.new()
+
+file_path = ARGV[0]
+unless File.exists? file_path
+  raise "File not found: #{file_path}"
+end
+
+lines = File.readlines(file_path)
+
+lines.each do |line|
+  SCRATCH.interprete(line)
+end

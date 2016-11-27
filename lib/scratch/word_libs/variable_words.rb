@@ -24,11 +24,6 @@ module Scratch
       add_words(variable_words)
     end
 
-    # Define a new dictionary word with some code
-    def define word, func
-      @dictionary[word.upcase] = func
-    end
-
     private
     def make_variable(terp)
       var = { value: nil }

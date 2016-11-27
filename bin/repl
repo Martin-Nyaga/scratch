@@ -15,7 +15,7 @@ puts
 
 # start repl
 loop do
-  print "Scratch::#{prompt} > ".bold
+  print "Scratch::#{prompt}> ".bold
   command = gets.chomp
   SCRATCH.interprete(command)
 end 
