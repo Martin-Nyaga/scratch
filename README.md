@@ -5,6 +5,15 @@ It is the ruby implementation of the language in [this tutorial](http://scratch-
 
 [![Build Status](https://travis-ci.org/Martin-Nyaga/scratch.svg?branch=master)](https://travis-ci.org/Martin-Nyaga/scratch)
 
+### Hello World in Scratch
+```
+Scratch REPL
+Press CTRL+C to exit
+
+Scratch::ba0900> " Hello World! " print
+Hello World!
+```
+
 # Usage
 
 ## Interactive Mode
@@ -36,7 +45,7 @@ Scratch:89sno9> pstack
 1
 Scratch:89sno9> 2 3 5 2 90
 Scratch:89sno9> pstack
-1 2 3 5 2 90
+1 ; 2 ; 3 ; 5 ; 2 ; 90
 ```
 
 ### Stack manipulation
@@ -62,12 +71,12 @@ Scratch:89sno9> pstack
 
 Scratch:89sno9> 19
 Scratch:89sno9> dup pstack
-19 19
+19 ; 19
 Scratch:89sno9> dropstack
 Scratch:89sno9> pstack
 
 Scratch:89sno9> 19 dup dup drop 12 swap pstack
-19 12 19
+19 ; 12 ; 19
 Scratch:89sno9> dropstack print
 == Error: This command requres at least 1 item on the stack
 ```
@@ -91,6 +100,22 @@ Scratch:89sno9> pstack
 # Twenty Divided by five, then take the quotient, plus three #
 Scratch:89sno9> 20 5 / 3 + print
 7
+```
+
+### Strings & Comments
+Strings in scratch are loaded onto the stack by typing them surrounded in double quotes. The double quotes must be spaced out i.e.`" Hello World "` and not `"Hello World"`. This will load the string on to the stack.
+
+```
+Scratch:89sno9> " Hello World "
+Scratch:89sno9> pstack
+Hello World
+Scratch:89sno9> " Foo Bar " pstack
+Hello World ; Foo Bar
+```
+Comments work the same way as strings except they use the '#' character and don't modify the stack.
+```
+Scratch:89sno9> # This is a comment #
+Scratch:89sno9>
 ```
 
 ### Variables
@@ -125,18 +150,18 @@ A more complex example of using variables to do some math:
 > var width
 > var hypot
 
-# assign length and width
+# assign length and width #
 > 3 length assign
 > 4 width assign
 
-# fetch length and width to do math. 
-  This will push 3 and 4 on the stack. #
+# fetch length and width to do math. #
+# This will push 3 and 4 on the stack. #
 > length fetch width fetch
 
-# calculate hypotenuse using algorithm.
-  This should calculate 5, push it on the
-  stack and then finally assign it to hypot,
-  and clear the stack. #
+# calculate hypotenuse using algorithm. #
+# This should calculate 5, push it on the #
+# stack and then finally assign it to hypot, #
+# and clear the stack. #
 > dup * swap dup * + sqrt hypot assign
 
 # fetch and print the hypotenuse #
