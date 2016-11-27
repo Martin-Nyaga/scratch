@@ -1,7 +1,7 @@
 # Scratch
 Scratch is a simple stack-based programming language implemented in ruby.
 
-It is the ruby implementation of the language in [this tutorial](http://scratch-lang.notimetoplay.org/]), originally in javascript.
+It is the ruby implementation of the language in [this tutorial](http://scratch-lang.notimetoplay.org/), originally in javascript.
 
 [![Build Status](https://travis-ci.org/Martin-Nyaga/scratch.svg?branch=master)](https://travis-ci.org/Martin-Nyaga/scratch)
 
@@ -22,9 +22,70 @@ At any moment you can print the stack using `pstack`.
 ### Adding items onto the stack
 
 You can add numbers to the stack simply by entering the number and hitting
-enter.
+enter. You can add several numbers seperated by a space.
 
-TO DO - Complete Usage docs
+```
+Scratch:89sno9> 1
+Scratch:89sno9> pstack
+1
+Scratch:89sno9> 2 3 5 2 90
+Scratch:89sno9> pstack
+1 2 3 5 2 90
+```
+
+### Stack manipulation
+
+There are several commands to manipulate the stack as shown below:
+
+| Command | Description|
+| ------------- |--------|
+| `pstack` | Print the stack. |
+| `print` | Print the top item in the stack. This drops the item from the stack. |
+| `dup` | Duplicate the top item in the stack. |
+| `swap` | Swap the top 2 items in the stack. |
+| `drop` | Remove the top item in the stack. |
+| `dropstack` | Clear the stack. |
+
+You can mix and match commands and run them as a single command. Scratch executes one word at a time.
+
+```
+Scratch:89sno9> 19
+Scratch:89sno9> print
+19
+Scratch:89sno9> pstack
+
+Scratch:89sno9> 19
+Scratch:89sno9> dup pstack
+19 19
+Scratch:89sno9> dropstack
+Scratch:89sno9> pstack
+
+Scratch:89sno9> 19 dup dup drop 12 swap pstack
+19 12 19
+Scratch:89sno9> dropstack print
+== Error: This command requres at least 1 item on the stack
+```
+
+### Simple Math
+
+The scratch standard library has the simple arithmetic operators `+`, `-`, `*`, `&` and `sqrt`.
+These operate on the top 2 items in the stack (with the exception of `sqrt` which operates on
+the top item only).
+
+Each of these commmands removes those items from the stack and places the result at the top of the stack.
+
+```
+Scratch:89sno9> 2 3 + print
+5
+Scratch:89sno9> pstack
+
+Scratch:89sno9> 2 3 *
+Scratch:89sno9> pstack
+6
+Scratch:89sno9> 20 5 / 3 + print
+7
+(Twenty Divided by five, then take the quotient, plus three)
+```
 
 # Testing
 
