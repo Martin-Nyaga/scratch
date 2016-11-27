@@ -16,6 +16,16 @@ Hello World!
 
 # Usage
 
+## Scripting
+The scratch interpeter is located at `bin/scratch`.
+You can run scratch files by running `path/to/scratch file.scratch`.
+Some sample scratch scripts are contained in the `sample` folder of this repo.
+
+```
+$> bin/scratch sample/hello_world.scratch
+Hello, World!
+```
+
 ## Interactive Mode
 
 You can run the scratch REPL by running `bin/repl` in the folder where
