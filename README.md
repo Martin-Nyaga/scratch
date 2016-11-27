@@ -22,7 +22,7 @@ You can run scratch files by running `path/to/scratch file.scratch`.
 Some sample scratch scripts are contained in the `sample` folder of this repo.
 
 ```
-$> bin/scratch sample/hello_world.scratch
+$ bin/scratch sample/hello_world.scratch
 Hello, World!
 ```
 
