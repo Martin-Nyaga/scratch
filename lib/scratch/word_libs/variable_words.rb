@@ -12,7 +12,7 @@ module Scratch
             
             terp.define(var_name, make_variable(terp))
           },
-          "STORE" => lambda {|terp|
+          "ASSIGN" => lambda {|terp|
             WordHelpers.require_items_on_stack(terp, 2)
             ref = terp.stack.pop
             val = terp.stack.pop
@@ -29,8 +29,8 @@ module Scratch
     end
 
     # Define a new dictionary word with some code
-    def define word, lambda
-      @dictionary[word.upcase] = lambda
+    def define word, func
+      @dictionary[word.upcase] = func
     end
 
     private

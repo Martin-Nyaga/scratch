@@ -15,23 +15,23 @@ describe "Scratch::Interpreter variables" do
     end
   end
 
-  describe "STORE" do
-    it "stores a variable" do
+  describe "ASSIGN" do
+    it "assigns a variable" do
       @terp = Scratch::Interpreter.new
-      @terp.interprete("VAR A 10 A STORE A")
+      @terp.interprete("VAR A 10 A ASSIGN A")
       assert_equal "10", @terp.stack.last[:value]
     end
 
     it "blows up with no variable" do
       @terp = Scratch::Interpreter.new
-      assert_raises(Scratch::FewArgumentsError){ @terp.interprete("STORE") }
+      assert_raises(Scratch::FewArgumentsError){ @terp.interprete("ASSIGN") }
     end
   end
 
   describe "FETCH" do
     it "pushes a variable on to the stack" do
       @terp = Scratch::Interpreter.new
-      @terp.interprete("VAR A 10 A STORE A FETCH")
+      @terp.interprete("VAR A 10 A ASSIGN A FETCH")
       assert_equal "10", @terp.stack.last
     end
 
